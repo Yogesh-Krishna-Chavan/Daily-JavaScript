@@ -357,6 +357,7 @@ for(const [team,odd] of Object.entries(game.odds)) {
 }
 */
 
+/*
 //Set 
 
 const orderSet = new Set(['Pasta', 'Pista', 'Pizza', 'Rissoto', 'Chicken', 'Pizza']);
@@ -377,3 +378,52 @@ const staff = ['waiter', 'chef', 'waiter', 'Manager', 'Cook'];
 console.log(staff);
 const staffUnique = [...new Set(staff)];
 console.log(staffUnique);
+*/
+
+/*
+//Map
+const rest = new Map();
+rest.set('name','Classico Italiano');
+rest.set(1,'Firenze, Italy');
+console.log(rest.set(2,'Lisbon, Portugal'));
+
+rest.set('categories',['Italian', 'Pizzeria', 'Vegetarian', 'Organic']).set('open',11).set('close',23).set(true,'We are open').set(false,'We are close');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(false));
+
+const arr = [1,2];
+rest.set(arr,'Test');
+rest.set(document.querySelector('h1'),'Heading');
+console.log(rest);
+console.log(rest.size);
+console.log(rest.get(arr));
+*/
+
+const question = new Map([
+  ['question','What is the best programming language in the world?'],
+  [1,'C'],
+  [2,'Java'],
+  [3,'JavaScript'],
+  ['correct',3],
+  [true, 'Correct'],
+  [false,'Wrong... Try again'],
+]);
+console.log(question);
+
+//Convert object to map
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//Quiz app
+console.log(question.get('question'));
+for(const[key, value] of question){
+  if(typeof key === 'number')
+  console.log(`Answer ${key}:${value}`);
+}
+
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+console.log(question.get(question.get('correct') === answer));
