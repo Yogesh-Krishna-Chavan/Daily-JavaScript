@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(236, 185, 236);
+  background-color: rgb(174, 179, 156);
   font-family: Arial;
   font-size: 20px;
 }
@@ -13,9 +13,14 @@ h1 {
 }
 
 .second {
-  color: yellow;
+  color: rgb(0, 255, 98);
 }
 
 .third {
   color: brown;
+}
+
+#your-name {
+  background-color: rgb(238, 200, 129);
+  border: 3px solid #ec1414;
 }
