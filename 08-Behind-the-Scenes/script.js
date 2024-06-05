@@ -84,7 +84,7 @@ var addArrow = (a, b) => {
   return a + b;
 };
 addArrow(2, 5, 8);
-*/
+
 
 //Data types -> Primitives
 let age = 30;
@@ -101,3 +101,35 @@ const friend = me;
 friend.age = 27;
 console.log('friend:', friend);
 console.log('Me:', me);
+*/
+
+let lastName = 'Chavan';
+let oldLastName = lastName;
+lastName = 'Gokhale';
+console.log(lastName, oldLastName);
+
+const poonam = {
+  firstName:'poonam',
+  lastName: 'rajshekhar',
+  age: 27,
+};
+
+const marriedPoonam = poonam;
+marriedPoonam.lastName = 'inamdar';
+
+console.log('Before Marriage:',poonam);
+console.log('After Marriage:',marriedPoonam);
+
+//Copying object
+const poonam2 = {
+  firstName:'poonam',
+  lastName: 'rajshekhar',
+  age: 27,
+  family: ['Madhu', 'Riya']
+};
+
+const poonamCopy = Object.assign({}, poonam2);
+poonamCopy.lastName = 'inamdar';
+
+console.log('Before Marriage:',poonam2);
+console.log('After Marriage:',poonamCopy);
