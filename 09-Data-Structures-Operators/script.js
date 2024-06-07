@@ -32,6 +32,7 @@ const restaurant = {
   },
 };
 
+/*
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -68,3 +69,14 @@ console.log(i, j, k);
 //Default values
 const [p, q = 1, r = 2] = [8, 9];
 console.log(p, q, r);
+*/
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
