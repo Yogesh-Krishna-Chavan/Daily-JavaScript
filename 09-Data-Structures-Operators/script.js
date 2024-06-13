@@ -49,7 +49,7 @@ const restaurant = {
     console.log(`Here is your delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
   },
 };
-
+/*
 //Optional chaining
 const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 for(const day of days){
@@ -81,7 +81,7 @@ for (const [key, { open, close }] of entries) {
 // for (const day of Object.keys(openingHours)) {
 //   console.log(day);
 // }
-/*
+
 // for-of loop
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
@@ -259,7 +259,7 @@ BONUS: Create an object called 'scorers' which contains the names of the players
       }
 
 GOOD LUCK 😀
-
+*/
 
 const game = {
   team1: 'Bayern Munich',
@@ -301,7 +301,7 @@ const game = {
     team2: 6.5,
   },
 };
-
+/*
 //1.
 const [players1,players2] = game.players;
 console.log(players1,players2);
@@ -335,3 +335,27 @@ printGoals(...game.score);
 team1 < team2 && console.log('Team1 is more likely to win');
 team2 < team1 && console.log('Team2 is more likely to win');
 */
+
+//Challenge 2
+//1
+for(const [i,players] of game.scored.entries())
+console.log(`Goal ${i +1}: ${players}`);
+
+// 2
+const odds = Object.values(game.odds);
+let average = 0;
+for(const odd of odds)
+average += odd;
+average /= odds.length;
+console.log(average);
+
+//3
+for(const [team,odd] of Object.entries(game.odds)) {
+   const teamStr = team === 'x'? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+
+
+// Odd of victory Bayern Munich: 1.33
+//       Odd of draw: 3.25
+//       Odd of victory Borrussia Dortmund: 6.5
