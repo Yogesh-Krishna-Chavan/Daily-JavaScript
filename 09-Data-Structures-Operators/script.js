@@ -336,6 +336,7 @@ team1 < team2 && console.log('Team1 is more likely to win');
 team2 < team1 && console.log('Team2 is more likely to win');
 */
 
+/*
 //Challenge 2
 //1
 for(const [i,players] of game.scored.entries())
@@ -354,8 +355,25 @@ for(const [team,odd] of Object.entries(game.odds)) {
    const teamStr = team === 'x'? 'draw' : `victory ${game[team]}`;
   console.log(`Odd of ${teamStr} ${odd}`);
 }
+*/
 
+//Set 
 
-// Odd of victory Bayern Munich: 1.33
-//       Odd of draw: 3.25
-//       Odd of victory Borrussia Dortmund: 6.5
+const orderSet = new Set(['Pasta', 'Pista', 'Pizza', 'Rissoto', 'Chicken', 'Pizza']);
+console.log(orderSet);
+
+console.log(new Set('Yogesh'));
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Puranpoli'));
+orderSet.add('Garlic bread');
+orderSet.delete('Rissoto');
+console.log(orderSet);
+
+for(const order of orderSet)
+console.log(order);
+
+const staff = ['waiter', 'chef', 'waiter', 'Manager', 'Cook'];
+console.log(staff);
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
