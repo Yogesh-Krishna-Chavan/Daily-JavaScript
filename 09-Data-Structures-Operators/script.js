@@ -50,6 +50,13 @@ const restaurant = {
   },
 };
 
+//Optional chaining
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for(const day of days){
+  const open = restaurant.openingHours[day]?.open;
+  console.log(`On ${day}, we open at ${open}`);
+}
+
 const properties = Object.keys(openingHours);
 console.log(properties);
 
