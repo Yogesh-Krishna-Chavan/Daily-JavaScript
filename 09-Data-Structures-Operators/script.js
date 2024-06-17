@@ -442,7 +442,7 @@ Let's continue with our football betting app! This time, we have a map with a lo
       [FIRST HALF] 17: ⚽️ GOAL
 
 GOOD LUCK 😀
-*/
+
 
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
@@ -478,3 +478,38 @@ for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'First' : 'SECOND';
   console.log(`[${half}HALF] ${min}: ${event}`);
 }
+*/
+
+const airline = 'TAP Air India';
+const plane = 'A320';
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+console.log(airline.length);
+console.log(plane.length);
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('a'));
+console.log(airline.indexOf('India'));
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+//middle seat checking function
+const checkMIddleSeat = function (seat) {
+  //B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got middle seat');
+  } else {
+    console.log('You got lucky');
+  }
+};
+
+checkMIddleSeat('11B');
+checkMIddleSeat('23C');
+checkMIddleSeat('3E');
