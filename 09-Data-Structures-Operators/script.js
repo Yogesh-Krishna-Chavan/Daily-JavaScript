@@ -481,6 +481,7 @@ for (const [min, event] of gameEvents) {
 */
 
 const airline = 'TAP Air India';
+/*
 const plane = 'A320';
 console.log(plane[0]);
 console.log(plane[1]);
@@ -513,3 +514,54 @@ const checkMIddleSeat = function (seat) {
 checkMIddleSeat('11B');
 checkMIddleSeat('23C');
 checkMIddleSeat('3E');
+*/
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+//Text formating
+const passenger = 'yOgesH';
+const passengerLower = passenger.toLowerCase();
+const passengerUpper = passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerUpper);
+
+//email compairing
+const email = 'yogeshchavan113@gmail.com';
+const loginEmail = '  yOgeshChAvan113@GmAil.com';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+//replaing 
+const priceGB = '288,97$';
+const priceIND = priceGB.replace('$','RS').replace(',','.');
+console.log(priceIND);
+
+const announcemnet = 'All passenger come to door num 23. and come towards door num 26';
+console.log(announcemnet.replace(/door/g,'gate'));
+
+//Booleans
+const plane = 'AirBus 320Z new';
+console.log(plane.includes('320'));
+console.log(plane.startsWith('A'));
+
+if(plane.startsWith('AirBus') && plane.endsWith('new')){
+  console.log('Part of Airbus family');
+};
+
+const checkBaggage = function(items){
+const baggage = items.toLowerCase();
+if(baggage.includes('knife') || baggage.includes('gun')){
+  console.log('Passenger is not allowed');
+}
+else{
+  console.log('Welcome');
+}
+}
+
+checkBaggage('I have Laptop, some food and pocket Knife for cutting fruit');
+checkBaggage('I have gun for protection');
+checkBaggage('Socks and Camera');
