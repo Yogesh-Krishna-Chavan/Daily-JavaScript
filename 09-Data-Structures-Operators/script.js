@@ -572,3 +572,15 @@ console.log('a+very+nice+string'.split('+'));
 console.log('Yogesh Chavan'.split(' '));
 
 const [firstName, lastName] = 'Yogesh Chavan'.split(' ');
+
+//padding
+const message = 'Go to gate 23';
+console.log(message.padStart(25,'+'));
+
+const maskCreditCard = function (number){
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(65478945165655655));
