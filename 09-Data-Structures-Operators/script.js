@@ -516,6 +516,7 @@ checkMIddleSeat('23C');
 checkMIddleSeat('3E');
 */
 
+/*
 console.log(airline.toLowerCase());
 console.log(airline.toUpperCase());
 
@@ -565,3 +566,9 @@ else{
 checkBaggage('I have Laptop, some food and pocket Knife for cutting fruit');
 checkBaggage('I have gun for protection');
 checkBaggage('Socks and Camera');
+*/
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Yogesh Chavan'.split(' '));
+
+const [firstName, lastName] = 'Yogesh Chavan'.split(' ');
