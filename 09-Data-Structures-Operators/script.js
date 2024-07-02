@@ -566,7 +566,7 @@ else{
 checkBaggage('I have Laptop, some food and pocket Knife for cutting fruit');
 checkBaggage('I have gun for protection');
 checkBaggage('Socks and Camera');
-*/
+
 
 console.log('a+very+nice+string'.split('+'));
 console.log('Yogesh Chavan'.split(' '));
@@ -588,3 +588,15 @@ console.log(maskCreditCard(65478945165655655));
 //Repeat
 const message2 = 'Bad weather.... All departure delayed'
 console.log(message2.repeat(10));
+*/
+
+//Coding challenge 4
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+  console.log(rows);
+});
