@@ -241,7 +241,7 @@ document
 
 poll.displayResult.call({ answers: [5, 2, 3] }, 'string');
 poll.displayResult.call({ answers: [1, 5, 3, 9, 6, 1] });
-*/
+
 
 const runOnce = function () {
   console.log('This will never run again');
@@ -260,3 +260,63 @@ runOnce();
   var notPrivate = 46;
 }
 console.log(notPrivate);
+*/
+
+/*
+//closure
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+console.dir(booker);
+*/
+
+//example 1
+let f;
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+h();
+f();
+console.dir(f);
+
+//example 2
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`we are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`will start boarding in ${wait}`);
+};
+
+setTimeout(function () {
+  console.log('TIMER');
+}, 1000);
+
+const perGroup = 1000;
+boardPassengers(180, 3);
