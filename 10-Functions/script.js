@@ -202,7 +202,7 @@ BONUS TEST DATA 1: [5, 2, 3]
 BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
 GOOD LUCK 😀
-*/
+
 
 const poll = {
   question: 'What is your favourite programming language?',
@@ -241,3 +241,22 @@ document
 
 poll.displayResult.call({ answers: [5, 2, 3] }, 'string');
 poll.displayResult.call({ answers: [1, 5, 3, 9, 6, 1] });
+*/
+
+const runOnce = function () {
+  console.log('This will never run again');
+};
+runOnce();
+
+//Immediate function invoke
+(function () {
+  console.log('This will never run again');
+})();
+
+(() => console.log('This will Also never run again'))();
+
+{
+  const isPrivate = 23;
+  var notPrivate = 46;
+}
+console.log(notPrivate);
