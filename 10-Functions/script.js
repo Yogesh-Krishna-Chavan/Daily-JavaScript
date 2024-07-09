@@ -128,7 +128,43 @@ console.log(swiss);
 
 //apply method
 const flighData = [583, 'Hitesh'];
-book.apply(swiss,flighData);
+book.apply(swiss, flighData);
 console.log(swiss);
 
 book.call(swiss, ...flighData);
+
+//Bind method
+const bookCH = book.bind(chippi);
+const bookG = book.bind(Goa);
+const bookSW = book.bind(swiss);
+
+bookCH(23, 'sameer');
+bookG(452, 'smita');
+bookSW(856, 'saroj');
+
+const bookCH23 = book.bind(chippi, 569);
+bookCH23('Yogiraj');
+bookCH23('Hiren');
+
+//with Event Listeners
+chippi.planes = 300;
+chippi.buyplane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+document
+  .querySelector('.buy')
+  .addEventListener('click', chippi.buyplane.bind(chippi));
+
+//Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+const addVat2 = addTaxRate(0.23);
+console.log(addVat2(100));
