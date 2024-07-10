@@ -45,37 +45,36 @@ const newPassport = function(person){
 
 newPassport(yogesh);
 checkIn(flight,yogesh);
-*/           
 
-const oneWord = function(str) {
-    return str.replace(/ /g, '').toLowerCase();
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
 };
 
-const upperFirstWord = function(str){
-    const [first, ...others] = str.split(' ');
-    return [first.toUpperCase(), ...others].join(' ');
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
 };
 
 //Higher-order function
-const transform = function(str, fn){
+const transform = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
 
-console.log(`Original string: ${str}`);
-console.log(`Transformed string: ${fn(str)}`);
-
-console.log(`Transformed by: ${fn.name}`);
+  console.log(`Transformed by: ${fn.name}`);
 };
 transform('JavaScript is the fun!', upperFirstWord);
 
-const high5 = function() {
-    console.log('🖐️');
+const high5 = function () {
+  console.log('🖐️');
 };
-document.body.addEventListener('click',high5);
+document.body.addEventListener('click', high5);
 ['jonas', 'Martha', 'Adam'].forEach(high5);
 
-const greet = function(greeting){
-    return function(name){
-        console.log(`${greeting} ${name}`);
-    };
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
 };
 
 const greeterHey = greet('Hey');
@@ -83,3 +82,24 @@ greeterHey('Yogesh');
 greeterHey('Chavan');
 
 greet('Hello')('Yogesh');
+
+//Arrow Function
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+greetArr('Hii')('Yogesh');
+*/
+
+const chippi = {
+  airline: 'chippi',
+  iataCode: 'CH',
+  bookings: [],
+
+  //Book finction
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+    );
+  },
+};
+
+chippi.book(239, 'Yogesh Chavan');
+chippi.book(240, 'John');
