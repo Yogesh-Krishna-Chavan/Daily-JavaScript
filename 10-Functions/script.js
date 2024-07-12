@@ -98,8 +98,37 @@ const chippi = {
     console.log(
       `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
     );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
   },
 };
 
 chippi.book(239, 'Yogesh Chavan');
 chippi.book(240, 'John');
+
+//call method
+const Goa = {
+  airline: 'Goa',
+  iataCode: 'G',
+  bookings: [],
+};
+
+const book = chippi.book;
+book.call(Goa, 23, 'Raj');
+console.log(Goa);
+book.call(chippi, 49, 'Siraj');
+console.log(chippi);
+
+const swiss = {
+  airline: 'Swiss',
+  iataCode: 'Sw',
+  bookings: [],
+};
+book.call(swiss, 545, 'Shilpa');
+console.log(swiss);
+
+//apply method
+const flighData = [583, 'Hitesh'];
+book.apply(swiss,flighData);
+console.log(swiss);
+
+book.call(swiss, ...flighData);
