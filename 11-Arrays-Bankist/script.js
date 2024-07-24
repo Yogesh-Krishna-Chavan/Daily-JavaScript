@@ -208,3 +208,18 @@ const movementsDescriptions = movements.map((mov, i, arr) => {
   }
 });
 console.log(movementsDescriptions);
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+const depositeFor = [];
+for (const mov of movements) if (mov > 0) depositeFor.push(mov);
+console.log(depositeFor);
+
+const withdrawals = movements.filter(function(mov){
+return mov < 0;
+})
+console.log(withdrawals);
