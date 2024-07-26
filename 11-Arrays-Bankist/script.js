@@ -61,6 +61,22 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const displayMovements = function (movements) {
+  containerMovements.innerHTML = '';
+
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? 'deposite' : 'withdrawal';
+
+    const html = `<div class="movements__row">
+<div class="movements__type movements__type--${type}"> ${i + 1} ${type}</div>
+<div class="movements__value"> ${mov}</div>
+</div>`;
+
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+displayMovements(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -117,9 +133,8 @@ console.log(arr.at(-1));
 console.log('Yogesh'.at(-1));
 */
 
-/*
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
+/*
 // for (const movement of movements) {
 for (const [i, movement] of movements.entries()) {
   if (movement > 0) {
@@ -159,4 +174,25 @@ currenciesUnique.forEach(function (value, key, map) {
   console.log(`${key}: ${value}`);
 });
 */
+const eurToUsd = 1.1;
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
 
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementsUSD);
+
+const movementUSDfor = [];
+for (const mov of movements) movementUSDfor.push(mov * eurToUsd);
+console.log(movementUSDfor);
+
+const movementsDescriptions = movements.map((mov, i, arr) => {
+  if (mov > 0) {
+    return `Movement ${i + 1} You are deposited ${mov}`;
+  } else {
+    return `Movement ${i + 1} You are withdraw ${Math.abs(mov)}`;
+  }
+});
+console.log(movementsDescriptions);
