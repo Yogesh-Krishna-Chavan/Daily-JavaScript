@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple Mobile Genrations</title>
+    <link rel="icon" href="apple.png" />
+  </head>
+  <body>
+    <h1>Iphone models</h1>
+    <div id="image"></div>
+
+    <script>
+      function loadImage(url) {
+        return new Promise((resolve, reject) => {
+          let img = new Image(500, 500);
+          img.onload = function () {
+            resolve(img);
+          };
+          img.onerror = function () {
+            reject(new Error(`Failed to load image: ${url}`));
+          };
+          img.src = url;
+        });
+      }
+
+      let image = document.getElementById("image");
+
+      let imageUrl = ["xs.jpeg", "12.jpg", "13.jpg", "16.jpeg"];
+
+      Promise.all(imageUrl.map(loadImage))
+        .then((images) => {
+          images.forEach((img) => image.appendChild(img));
+        })
+        .catch((err) => console.log(err));
+    </script>
+  </body>
+</html>
