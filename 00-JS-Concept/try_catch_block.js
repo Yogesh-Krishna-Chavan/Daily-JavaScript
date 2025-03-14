@@ -6,7 +6,7 @@
 function divide(a, b) {
   try {
     if (b === 0) {
-      throw new Error("Divide by zero not possible");
+      throw new Error("Divide by zero is not possible");
     } else {
       console.log(`a / b = ${a / b}`);
     }
@@ -15,3 +15,4 @@ function divide(a, b) {
   }
 }
 divide(10, 0);
+divide(10, 2);
